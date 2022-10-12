@@ -7,5 +7,6 @@ def generate_data():
     x=np.array(range(num_samples))
     #print(x)
     random_noise=np.random.uniform(-10,20,size=num_samples)
-    print(random_noise)
+    print(random_noise)   
+    
 generate_data()
