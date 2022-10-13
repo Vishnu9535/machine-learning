@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+
 seed=1234
 NUM_SAMPLE=50
 def generate_data():
