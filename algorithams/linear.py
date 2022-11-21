@@ -1,7 +1,5 @@
-import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
-
 
 seed = 1234
 NUM_SAMPLE = 50
