@@ -12,5 +12,10 @@
 
 
 # main()
-while True:
-    pass
+try:
+    while True:
+        line = input("Enter a line of text: ")
+        # Process the input
+        print("You entered:", line)
+except EOFError:
+    print("Ctrl+D (EOF) detected. Exiting...")

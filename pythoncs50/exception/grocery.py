@@ -8,6 +8,6 @@ while  True:
         else:
             item[fruits]=1
     except EOFError:
-        for i in sorted(item):
-            print(item[i],i)
         break
+for i in sorted(item):
+        print(item[i],i)
