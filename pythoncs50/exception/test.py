@@ -12,10 +12,15 @@
 
 
 # main()
-try:
-    while True:
-        line = input("Enter a line of text: ")
-        # Process the input
-        print("You entered:", line)
-except EOFError:
-    print("Ctrl+D (EOF) detected. Exiting...")
+# try:
+#     while True:
+#         line = input("Enter a line of text: ")
+#         # Process the input
+#         print("You entered:", line)
+# except EOFError:
+#     print("Ctrl+D (EOF) detected. Exiting...")
+x="sept 9 1699"
+z=x.split("/")
+if (len(z)!=3):
+    print(x.split(" "))
+    

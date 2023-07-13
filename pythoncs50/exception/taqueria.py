@@ -14,9 +14,9 @@ menu={
 # print(menu[order])
 cost=0
 while True:
-    order=str(input("Item:"))
-    order=order.title()
     try:
+        order=str(input("Item:"))
+        order=order.title()
         cost=cost+float(menu[order])
         print("${:.2f}".format(cost))
     except EOFError:

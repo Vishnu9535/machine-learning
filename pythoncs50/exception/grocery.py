@@ -1,8 +1,8 @@
 item=dict()
 while  True:
-    fruits=str(input(""))
-    fruits=fruits.upper()
     try:
+        fruits=str(input(""))
+        fruits=fruits.upper()
         if(fruits in item):
             item[fruits]=item[fruits]+1
         else:
