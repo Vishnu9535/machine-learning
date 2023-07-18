@@ -16,8 +16,8 @@ def get_level():
             pass
 
 def generate_integer(level):
-    ...
-
+    range=level*10
+    
 
 if __name__ == "__main__":
     main()
