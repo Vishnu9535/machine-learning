@@ -3,8 +3,8 @@ import random
 
 def main():
     x=get_level()
-    generate_integer(x)
-
+    score=generate_integer(x)
+    print("Score : ",score)
 def get_level():
     while True:
         try:
@@ -16,8 +16,29 @@ def get_level():
             pass
 
 def generate_integer(level):
-    range=level*10
-    
-
+    ran=level*10
+    s=10
+    for i in range(10):
+        a=int(random.randint(0,ran))
+        b=int(random.randint(0,ran))
+        tries=0
+        while True:
+            try:
+                print(a," + ",b," = ",end="")
+                ans=int(input())
+                if(ans == (a+b)):
+                    break
+                else:
+                    tries=tries+1
+                    if(tries >= 3):
+                        s=s-1
+                        print(a ," + ",b," = ",(a+b))
+                        break
+                    print("EEE")
+                    raise Exception
+            except Exception:
+                pass
+    return s
+        
 if __name__ == "__main__":
     main()
