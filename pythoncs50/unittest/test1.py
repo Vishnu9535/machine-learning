@@ -8,19 +8,22 @@ def test_square():
     #     print("it was right")
     # if square(4) != 16:
     #     print("even this was wrong ")
-    try:
-        assert square(2) != 4
-    except AssertionError:
-        print("2 squared is 4")
-    try:
-        assert square(3) == 9
-    except:
-        print("3 squard is not 9")
+    # try:
+    #     assert square(2) != 4
+    # except AssertionError:
+    #     print("2 squared is 4")
+    # try:
+    #     assert square(3) == 9
+    # except:
+    #     print("3 squard is not 9")
 
-    try:
-        assert square(4) == 14
-    except:
-        print("4 square is not 14")
+    # try:
+    #     assert square(4) == 14
+    # except:
+    #     print("4 square is not 14")
+    assert square(3) == 9
+    assert square(2) != 5
+    assert square(4) == 16
 
 
 if __name__== "__main__":
