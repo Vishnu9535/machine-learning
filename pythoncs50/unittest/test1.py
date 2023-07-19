@@ -16,11 +16,12 @@ def test_square():
         assert square(3) == 9
     except:
         print("3 squard is not 9")
+
     try:
         assert square(4) == 14
     except:
         print("4 square is not 14")
-   
-        
+
+
 if __name__== "__main__":
     main()
