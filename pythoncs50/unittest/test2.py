@@ -1,0 +1,10 @@
+def main():
+    name= input("input a name ")
+    print(hello(name))
+    print(hello())
+
+def hello(to="world"):
+    return f"hello {to}"
+
+if __name__ == "__main__":
+    main()
