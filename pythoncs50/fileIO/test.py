@@ -3,9 +3,9 @@
 # file=open("name.txt","a")
 # file.write(f" {x} \n")
 # file.close()
-with open("name.txt" , "r") as file :
+with open("name.txt") as file :
     # file.write(f"{x} \n") 
     l= file.readlines()
-
-for line in l:
+# print(l)
+for line in sorted(l):
     print(line.rstrip())
