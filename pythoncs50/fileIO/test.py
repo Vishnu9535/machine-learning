@@ -1,3 +1,4 @@
+import csv 
 # x=input("what is ur name ")
 
 # file=open("name.txt","a")
@@ -10,17 +11,24 @@
 # for line in sorted(l):
 #     print(line.rstrip())
 students=[]
+# with open("students.csv") as file:
+#      for line in file:
+#           name,house=line.rstrip().split(",")
+#           student={}
+#           # student['name']=name
+#           # student['house']=house 
+#           students.append({"name":name,"house":house})
 with open("students.csv") as file:
-     for line in file:
-          name,house=line.rstrip().split(",")
-          student={}
-          student['name']=name
-          student['house']=house 
-          students.append(student)
+     # reader =csv.reader(file)
+     reader =csv.DictReader(file)
+     print(reader)
+     for row in reader:
+          print(row)
+          students.append({"name":row["name"],"house":row["home"]})
+          print(students)
 
 
-for stu in students:
-     print(stu)
-     print(f"{stu['name']} is in  {stu['house']}")
+for stu in sorted(students,key=lambda x:x["name"]):
+     print(f"{stu['name']} is from  {stu['house']}")
 
      
