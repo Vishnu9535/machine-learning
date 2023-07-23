@@ -9,5 +9,5 @@ while  True:
             item[fruits]=1
     except EOFError:
         break
-for i in sorted(item):
+for i in    (item):
         print(item[i],i)
