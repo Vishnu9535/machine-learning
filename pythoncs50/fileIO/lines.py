@@ -8,7 +8,7 @@ elif(str(sys.argv[-1]).endswith(".py")):
         with open(sys.argv[-1]) as file:
             lines=file.readlines()
             print(len(lines))
-    except Exception:
-        sys.exit("not file exist")
+    except FileNotFoundError:
+        sys.exit("no file exist")
 else:
     print("Not a Python file")
