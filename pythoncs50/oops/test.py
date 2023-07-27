@@ -25,15 +25,17 @@ class Student:
         if not name:
             raise ValueError("not a valid name")
         self._name=name
-
+    @classmethod
+    def get_student(cls):
+    # student =Student()
+        name=input("Name: ")
+        house=input("House: ")
+        return cls(name,house)
 def main():
-    student=get_student()
+    student=Student.get_student()
     # student._house="vishnu "
     print(student)
-def get_student():
-    # student =Student()
-    name=input("Name: ")
-    house=input("House: ")
-    return Student(name,house)#constucter
+
+    # return Student(name,house)#constucter
 if __name__=="__main__":
     main()
