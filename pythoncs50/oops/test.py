@@ -28,7 +28,7 @@ class Student:
 
 def main():
     student=get_student()
-    # student.house=""
+    # student._house="vishnu "
     print(student)
 def get_student():
     # student =Student()
