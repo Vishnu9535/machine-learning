@@ -32,5 +32,6 @@ obj1=Jar(15)
 obj1.deposit(4)
 # print(obj1)
 obj1.withdraw(3)
+obj1.deposit(6)
 print(obj1)
 
