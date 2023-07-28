@@ -19,7 +19,6 @@ class findtime:
         finaldate=  date(int(self.ptime[0]),int(self.ptime[1]),int(self.ptime[2]))- date(int(self.dob[0]),int(self.dob[1]),int(self.dob[2]))
         finaltime=int(finaldate.days)*60*24
         return finaltime
-         
                   
     def string_of_time(self,finaltime):
         p=inflect.engine()     
