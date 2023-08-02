@@ -22,7 +22,13 @@ def player(board):
     """
     Returns player who has the next turn on a board.
     """
-    raise NotImplementedError
+    cx= sum(row.count('X') for row in board)
+    co =  sum(row.count('O') for row in board)
+    if cx ==  co:
+        return 'X'
+    return 'O'
+
+    # raise NotImplementedError
 
 
 def actions(board):
