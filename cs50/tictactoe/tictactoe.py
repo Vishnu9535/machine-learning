@@ -34,7 +34,6 @@ def actions(board):
     """
     Returns set of all possible actions (i, j) available on the board.
     """
-    
     raise NotImplementedError
 
 
