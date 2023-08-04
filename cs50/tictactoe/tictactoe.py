@@ -51,8 +51,9 @@ def result(board, action):
         raise ValueError(" not a valid move")
 
     to_add = player(board)
-    board[i][j] = to_add
-    return board
+    new_board = board
+    new_board[i][j] = to_add
+    return new_board
 
 
 def winner(board):
@@ -119,10 +120,34 @@ def minimax(board):
 def max_value(board):
     
     if terminal(board):
+        return utility(board)
+    
+    v = -math.inf
+    best_action = None
+
+    for action in actions(board):
+        new_board= result(board,action)
+        value = min_value(new_board)
+        if v < value :
+            v= value
+            best_action = action
         
+        return best_action
 
 
 def min_value(board):
 
-    ...
+    if terminal(board):
+        return utility(board)
 
+    v = math.inf
+    best_action = None
+
+    for action in actions(board):
+        new_board= result(board,action)
+        value = max_value(new_board)
+        if v > value :
+            v = value
+            best_action = action
+                
+        return best_action
