@@ -34,22 +34,31 @@ def actions(board):
     """
     Returns set of all possible actions (i, j) available on the board.
     """
-    raise NotImplementedError
-
+    moves=set()
+    for i in range(3):
+        for j in range(3):
+            if(board[i][j] == 'EMPTY'):
+                moves.add((i,j))
+    return moves
 
 def result(board, action):
     """
     Returns the board that results from making move (i, j) on the board.
     """
-    raise NotImplementedError
-
+    i , j=action
+    if(board[i][j] != 'EMPTY'):
+        raise ValueError(" not a valid move")
+    
+    to_add = player(board)
+    board[i][j] = to_add
+    return board
 
 def winner(board):
     """
     Returns the winner of the game, if there is one.
     """
-    raise NotImplementedError
-
+    
+    
 
 def terminal(board):
     """
