@@ -37,7 +37,7 @@ def actions(board):
     moves = set()
     for i in range(3):
         for j in range(3):
-            if (board[i][j] == EMPTY):
+            if (board[i][j] == 'EMPTY'):
                 moves.add((i, j))
     return moves
 
@@ -47,7 +47,7 @@ def result(board, action):
     Returns the board that results from making move (i, j) on the board.
     """
     i,j = action
-    if (board[i][j] != EMPTY):
+    if board[i][j] != 'EMPTY':
         raise Exception("Invalid move.")
 
     to_add = player(board)
@@ -110,44 +110,44 @@ def minimax(board):
     """
     curr_player= player(board)
     if curr_player == 'X':
-        _,action=max_value(board)
+        action=max_value(board)
         return action
 
     if curr_player == 'O':
-        _,action= min_value(board)
+        action= min_value(board)
         return action 
 
 def max_value(board):
-    if terminal(board):
-        return utility(board), None
     
-    v = -2
+    if terminal(board):
+        return utility(board)
+    
+    v = -math.inf
     best_action = None
 
     for action in actions(board):
-        new_board = result(board, action)
-        # print(min_value(new_board))
-        value ,_= min_value(new_board)
-        if v < value:
-            v = value
+        new_board= result(board,action)
+        value = min_value(new_board)
+        if v < value :
+            v= value
             best_action = action
         
-    return v,best_action  # This line should be outside the loop
+    return best_action
+
 
 def min_value(board):
-    if terminal(board):
-        return utility(board),None
 
-    v = 2
+    if terminal(board):
+        return utility(board)
+
+    v = math.inf
     best_action = None
 
     for action in actions(board):
-        new_board = result(board, action)
-        # print(max_value(new_board))
-
-        value ,_ = max_value(new_board)
-        if v > value:
+        new_board= result(board,action)
+        value = max_value(new_board)
+        if v > value :
             v = value
             best_action = action
                 
-    return v,best_action
+    return best_action
