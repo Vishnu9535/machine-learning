@@ -107,4 +107,22 @@ def minimax(board):
     """
     Returns the optimal action for the current player on the board.
     """
-    raise NotImplementedError
+    curr_player= player(board)
+    if curr_player == 'X':
+        action=max_value(board)
+        return action
+
+    if curr_player == 'O':
+        action= min_value(board)
+        return action 
+
+def max_value(board):
+    
+    if terminal(board):
+        
+
+
+def min_value(board):
+
+    ...
+
