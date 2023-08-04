@@ -22,9 +22,9 @@ def player(board):
     """
     Returns player who has the next turn on a board.
     """
-    cx= sum(row.count('X') for row in board)
-    co =  sum(row.count('O') for row in board)
-    if cx ==  co:
+    cx = sum(row.count('X') for row in board)
+    co = sum(row.count('O') for row in board)
+    if cx == co:
         return 'X'
     return 'O'
     # raise NotImplementedError
@@ -34,31 +34,51 @@ def actions(board):
     """
     Returns set of all possible actions (i, j) available on the board.
     """
-    moves=set()
+    moves = set()
     for i in range(3):
         for j in range(3):
-            if(board[i][j] == 'EMPTY'):
-                moves.add((i,j))
+            if (board[i][j] == 'EMPTY'):
+                moves.add((i, j))
     return moves
+
 
 def result(board, action):
     """
     Returns the board that results from making move (i, j) on the board.
     """
-    i , j=action
-    if(board[i][j] != 'EMPTY'):
+    i, j = action
+    if (board[i][j] != 'EMPTY'):
         raise ValueError(" not a valid move")
-    
+
     to_add = player(board)
     board[i][j] = to_add
     return board
+
 
 def winner(board):
     """
     Returns the winner of the game, if there is one.
     """
-    
-    
+    for i in range(3):
+        if board[0][i] == board[1][i] and board[2][i] == board[1][i]:
+            return board[0][i]
+
+    for i in board:
+        if i == ['X', 'X', 'X']:
+            return 'X'
+        if i == ['O', 'O', 'O']:
+            return 'O'
+
+    if (board[0][0] != '.' and
+        board[0][0] == board[1][1] and
+            board[0][0] == board[2][2]):
+        return board[0][0]
+
+    if (board[0][2] != '.' and
+            board[0][2] == board[1][1] and
+            board[0][2] == board[2][0]):
+        return board[0][2]
+
 
 def terminal(board):
     """
