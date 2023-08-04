@@ -78,20 +78,29 @@ def winner(board):
             board[0][2] == board[1][1] and
             board[0][2] == board[2][0]):
         return board[0][2]
-
+    
+    return None
 
 def terminal(board):
     """
     Returns True if game is over, False otherwise.
     """
-    raise NotImplementedError
-
+    if winner(board) is not None or all(board[i][j] != EMPTY for i in range(3) for j in range(3)):
+        return True
+    return False
 
 def utility(board):
     """
     Returns 1 if X has won the game, -1 if O has won, 0 otherwise.
     """
-    raise NotImplementedError
+    if winner(board) == 'X':
+        return 1
+    
+    if winner(board) == 'O':
+        return -1
+    
+    else: 
+        return 0
 
 
 def minimax(board):
