@@ -27,7 +27,6 @@ def player(board):
     if cx == co:
         return 'X'
     return 'O'
-    # raise NotImplementedError
 
 
 def actions(board):
