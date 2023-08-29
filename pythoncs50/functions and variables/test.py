@@ -19,12 +19,15 @@
 # # Print the output
 # print(f"hello, {name}")
 # print(name.title())
-while True:
-    try:
-        x = int(input("What's x?"))
-    except ValueError:
-        print("x is not an integer")
-    else:
-        break
+# while True:
+#     try:
+#         x = int(input("What's x?"))
+#     except ValueError:
+#         print("x is not an integer")
+#     else:
+#         break
 
-print(f"x is {x}")
+# print(f"x is {x}")
+name = input("what is your name ? ").strip().title()
+print(f"My name is {name}")
+print(f"{round(3000000.567687,2):,.3f}")
