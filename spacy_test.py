@@ -184,7 +184,7 @@ nlp = spacy.load('en_core_web_sm')
 countries = ["brazil", "czech republic", "republic of usa", "South Korea", "North Korea"]
 
 # Input string
-s = "brazil czech republic usa"
+s = "brazil czech republic usa south korea"
 
 # Initialize a set to store extracted country names
 matched_countries = set()
