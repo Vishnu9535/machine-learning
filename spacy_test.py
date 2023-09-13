@@ -8,6 +8,8 @@ nlp = spacy.load('en_core_web_sm')
 # List of country names
 countries = ["brazil", "czech republic", "republic of usa", "South Korea", "North Korea"]
 
+
+
 # Input string
 
 
