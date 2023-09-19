@@ -174,6 +174,44 @@
 
 # # Print the extracted country names
 # print("Matched countries:", matched_countries)
+# import spacy
+# from fuzzywuzzy import fuzz
+
+# # Load the spaCy language model
+# nlp = spacy.load('en_core_web_sm')
+
+# # List of country names
+# countries = ["brazil", "czech republic", "republic of usa", "South Korea", "North Korea"]
+
+# # Input string
+# s = "brazil czech republic usa south korea"
+
+# # Initialize a set to store extracted country names
+# matched_countries = set()
+
+# # Process the input string using spaCy
+# doc = nlp(s.lower())
+
+# # Tokenize and join the tokens to form candidate phrases
+# tokens = [token.text for token in doc]
+# candidates = [' '.join(tokens[i:j + 1]) for i in range(len(tokens)) for j in range(i, len(tokens))]
+
+# # Sort the candidates by length (shortest to longest)
+# candidates.sort(key=len)
+
+# # Use fuzzy matching to check similarity with country names
+# for candidate in candidates:
+#     for country in countries:
+#         similarity = fuzz.partial_ratio(candidate, country)
+#         if similarity >= 80:  # Adjust the similarity threshold as needed
+#             matched_countries.add(country)
+#             break  # Break to avoid matching longer country names
+
+# # Convert the set of matched countries to a list
+# matched_countries = list(matched_countries)
+
+# # Print the extracted country names
+# print("Matched countries:", matched_countries)
 import spacy
 from fuzzywuzzy import fuzz
 
@@ -181,10 +219,10 @@ from fuzzywuzzy import fuzz
 nlp = spacy.load('en_core_web_sm')
 
 # List of country names
-countries = ["brazil", "czech republic", "republic of usa", "South Korea", "North Korea"]
+countries = ["brazil", "czech republic", "united states of america", "south korea", "north korea"]
 
 # Input string
-s = "brazil czech republic usa south korea"
+s = "brazil czech republic united states of america north korea"
 
 # Initialize a set to store extracted country names
 matched_countries = set()
@@ -204,7 +242,9 @@ for candidate in candidates:
     for country in countries:
         similarity = fuzz.partial_ratio(candidate, country)
         if similarity >= 80:  # Adjust the similarity threshold as needed
-            matched_countries.add(country)
+            # Only add the country name if it is not already in the set
+            if country not in matched_countries:
+                matched_countries.add(country)
             break  # Break to avoid matching longer country names
 
 # Convert the set of matched countries to a list
@@ -212,4 +252,5 @@ matched_countries = list(matched_countries)
 
 # Print the extracted country names
 print("Matched countries:", matched_countries)
+
 
