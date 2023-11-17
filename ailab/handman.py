@@ -1,17 +1,18 @@
-word = "Vishnu"
-print(word.replace)
+word = "vishnu"
+guess_word = "_"*len(word)
+print(guess_word)
 def disply():
-    for i in range(len(word)):
-        print("_ ", end = " ")
+    print(guess_word)
 disply()
 attempts = 6
-def guess():
-    while attempts > 0 :
-        letter = input("guess the letter ")
-        guess_word = ""
+def guess(word):
+        letter = str(input("guess the letter ")).lower().strip()
         if letter in word:
-            guess_word.append()
-            word=word.replace(letter,'')
+            print(word.replace(letter,"_"))
+
+guess(word)
+
+
         
 
 
