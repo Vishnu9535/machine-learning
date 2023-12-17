@@ -7,11 +7,11 @@ class Graph:
     def add_edge(self, u, v):
         if u in self.graph:
             self.graph[u].append(v)
-            # print(self.graph)
-        else:
+            print(self.graph)
+        else:   
             self.graph[u] = [v]
             # print("else")
-            # print(self.graph)
+            print(self.graph)
     
     def bfs(self, start):
         visited = set()
@@ -40,7 +40,7 @@ if __name__ == "__main__":
     graph.add_edge(3, 3)
 
     print("Breadth-First Traversal (starting from vertex 2):")
-    graph.bfs(2)
+    graph.bfs(0)
 
 # from collections import defaultdict, deque
 
