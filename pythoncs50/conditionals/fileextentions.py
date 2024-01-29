@@ -10,7 +10,7 @@ media_types = {
 }
 suffix=""
 if "." in file_name:
-    suffix=file_name.split(".")[-1]
+    suffix=file_name.split(".")[-1]d
 
 mt=media_types.get(suffix,"application/octet-stream")
 print(mt)
