@@ -10,5 +10,4 @@ def is_even(n):
     print(n % 2)
     return n % 2 == 0
 x="ell there"
-
-
+main()
